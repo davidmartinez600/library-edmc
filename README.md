@@ -1,6 +1,7 @@
 Sistema de Gestión de Biblioteca
 Este es un proyecto de gestión de biblioteca desarrollado con Django, que incluye un backend, una API RESTful y una interfaz de usuario con Bootstrap 4.
 
+
 Configuración Local
 Sigue estos pasos para ejecutar el proyecto en tu máquina:
 
