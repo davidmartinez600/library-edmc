@@ -11,4 +11,5 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina:
 ### 1. Clona el repositorio y accede
 ```bash
 git clone [https://github.com/davidmartinez600/library-edmc](https://github.com/davidmartinez600/library-edmc)
+```bash
 cd library-edmc
