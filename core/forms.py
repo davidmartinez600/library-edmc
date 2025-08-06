@@ -1,7 +1,7 @@
-# core/forms.py
 from django import forms
 from .models import Book
 
+# Formulario para crear y editar libros
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
