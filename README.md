@@ -86,5 +86,3 @@ Puedes usar estas credenciales para probar la aplicación en producción.
 
 **Usuario regular:**
 `david` / `Library123$`
-
-```
