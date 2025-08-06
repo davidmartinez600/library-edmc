@@ -1,26 +1,48 @@
 # Sistema de Gestión de Biblioteca
 
-Este es un proyecto de gestión de biblioteca desarrollado con Django, que incluye un backend, una API RESTful y una interfaz de usuario con Bootstrap 4.
+Este es un proyecto de gestión de biblioteca desarrollado con **Django**, que incluye un backend, una API RESTful y una interfaz de usuario con **Bootstrap 4**.
+
+---
 
 ## Configuración Local
 
 Sigue estos pasos para ejecutar el proyecto en tu máquina:
 
-1. Clona el repositorio y accede:
+### 1. Clona el repositorio y accede
+Clona el repositorio:
 ```bash
-git clone https://github.com/davidmartinez600/library-edmc
-cd library-edmc
+git clone [https://github.com/davidmartinez600/library-edmc](https://github.com/davidmartinez600/library-edmc)
 ````
 
-2. Configura el entorno de desarrollo:
+Accede a la carpeta del proyecto:
+
+```bash
+cd library-edmc
+```
+
+### 2\. Configura el entorno de desarrollo
+
+Crea el entorno virtual:
 
 ```bash
 python -m venv venv
+```
+
+Activa el entorno virtual:
+
+```bash
 source venv/bin/activate
+```
+
+Instala las dependencias:
+
+```bash
 pip install -r requirements.txt
 ```
 
-3. Configurar variables de entorno - Crea un archivo `.env` en la raíz del proyecto. Para la base de datos local, puedes usar SQLite.
+### 3\. Configurar variables de entorno
+
+Crea un archivo `.env` en la raíz del proyecto. Para la base de datos local, puedes usar **SQLite**.
 
 ```env
 SECRET_KEY=tu_clave_secreta_aqui
@@ -28,14 +50,23 @@ DEBUG=True
 DATABASE_URL=sqlite:///db.sqlite3
 ```
 
-4. Ejecuta la aplicación:
+### 4\. Ejecuta la aplicación
+
+Aplica las migraciones de la base de datos:
 
 ```bash
 python manage.py migrate
+```
+
+Inicia el servidor de desarrollo:
+
+```bash
 python manage.py runserver
 ```
 
 La aplicación estará disponible en [http://127.0.0.1:8000](http://127.0.0.1:8000/).
+
+-----
 
 ## Despliegue en Producción
 
@@ -43,6 +74,8 @@ El proyecto está desplegado en Render.com. Ten en cuenta que la primera carga p
 
 **URL de la aplicación:**
 [https://library-edmc.onrender.com](https://library-edmc.onrender.com)
+
+-----
 
 ## Credenciales de Acceso
 
@@ -53,3 +86,5 @@ Puedes usar estas credenciales para probar la aplicación en producción.
 
 **Usuario regular:**
 `david` / `Library123$`
+
+```
