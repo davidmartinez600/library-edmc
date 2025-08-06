@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Detalles del Libro</h1>
+        <p>Título: {{ book.title }}</p>
+        <p>Autor: {{ book.author }}</p>
+        <p>Año de Publicación: {{ book.publication_year }}</p>
+        <p>Stock: {{ book.stock_quantity }}</p>
+        <a href="{% url 'book_list' %}" class="btn btn-secondary">Volver a la lista</a>
+    </div>
+{% endblock %}

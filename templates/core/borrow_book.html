@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center shadow-sm p-4">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Confirmar Préstamo</h2>
+                    <p class="card-text">
+                        ¿Estás seguro de que quieres tomar prestado el libro: "{{ object.title }}"?
+                    </p>
+                    <form method="post" class="mt-4">
+                        {% csrf_token %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Confirmar Préstamo</button>
+                            <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

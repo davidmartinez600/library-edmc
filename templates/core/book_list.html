@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Libros Disponibles</h1>
+        {% if user.is_authenticated and user.role == 'administrator' %}
+            <a href="{% url 'book_create' %}" class="btn btn-primary">Añadir Nuevo Libro</a>
+        {% endif %}
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></td>
+                    <td>{{ book.author }}</td>
+                    <td>
+                        {% if user.is_authenticated and user.role == 'regular_user' %}
+                            {% if book in user.borrowed_books.all %}
+                                <a href="{% url 'return_book' book.pk %}" class="btn btn-warning">Devolver</a>
+                            {% else %}
+                                <a href="{% url 'borrow_book' book.pk %}" class="btn btn-success">Tomar Prestado</a>
+                            {% endif %}
+                        {% endif %}
+                        {% if user.is_authenticated and user.role == 'administrator' %}
+                            <a href="{% url 'book_update' book.pk %}" class="btn btn-primary">Editar</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No hay libros disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
